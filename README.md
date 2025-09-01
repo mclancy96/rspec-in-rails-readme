@@ -96,12 +96,58 @@ If you’re writing plain Ruby tests, you only need spec_helper.rb. For Rails ap
 
 ---
 
-## Practice Prompts
+## Getting Hands-On: Clinic App (Patient & Appointment)
 
-1. Add `rspec-rails` to a Rails app and run the generator. What files are created? (Use file path comments in your examples!)
-2. Create a new model and write a basic spec for it in `spec/models/`. Run the test and see what happens if it fails—then fix it and run again.
-3. Write a spec for an invalid model (e.g., missing a required attribute) and use `expect(user).not_to be_valid` to see how expectations work for failures.
-4. Explore the `rails_helper.rb` and `spec_helper.rb` files. What does each configure? Write a one-sentence summary for each.
+Ready to practice? Here’s how to get started with the Clinic Rails app:
+
+1. **Fork and Clone** this repo to your local machine.
+2. **Install dependencies:**
+
+   ```zsh
+   bundle install
+   ```
+
+3. **Set up the database:**
+
+   ```zsh
+   bin/rails db:migrate
+   ```
+
+4. **Run the test suite:**
+
+   ```zsh
+   bin/rspec
+   ```
+
+5. **Implement the pending specs:**
+   - Open `spec/models/patient_spec.rb` and `spec/models/appointment_spec.rb`.
+   - Look for specs marked with `pending`. Implement the corresponding methods in `app/models/patient.rb` and `app/models/appointment.rb` so all specs pass.
+
+### Example: Patient Model Spec
+
+```ruby
+# spec/models/patient_spec.rb
+RSpec.describe Patient, type: :model do
+  it 'is valid with valid attributes' do
+    patient = Patient.new(name: 'John Doe', date_of_birth: '1980-01-01')
+    expect(patient).to be_valid
+  end
+  # ...more examples...
+end
+```
+
+### Example: Appointment Model Spec
+
+```ruby
+# spec/models/appointment_spec.rb
+RSpec.describe Appointment, type: :model do
+  it 'is valid with valid attributes' do
+    appointment = Appointment.new(patient: patient, scheduled_at: 1.day.from_now, reason: 'Checkup')
+    expect(appointment).to be_valid
+  end
+  # ...more examples...
+end
+```
 
 ---
 
@@ -115,4 +161,4 @@ If you’re writing plain Ruby tests, you only need spec_helper.rb. For Rails ap
 
 ## What's Next?
 
-Next: In Lesson 20, we’ll write model specs for validations and associations, and introduce FactoryBot. **Lab 6 will follow this lesson**, where you’ll apply what you’ve learned by writing specs for a Rails mini-app’s models. This is your chance to get hands-on with RSpec, FactoryBot, and Rails models before moving on.
+Next: In Lesson 20, you’ll write model specs for validations and associations, and introduce FactoryBot. **Lab 6 will follow this lesson**, where you’ll apply what you’ve learned by writing specs for a Rails mini-app’s models. This is your chance to get hands-on with RSpec, FactoryBot, and Rails models before moving on.
