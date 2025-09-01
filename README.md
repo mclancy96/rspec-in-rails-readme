@@ -1,6 +1,6 @@
 # RSpec: RSpec in Rails
 
-Welcome to Lesson 19! In this lesson, you'll learn how to set up and use RSpec in a Ruby on Rails application. We'll cover installing the `rspec-rails` gem, running the generator, and understanding the Rails-specific spec folder structure. This lesson assumes you know Rails but are new to automated testing and RSpec.
+In this lesson, you'll learn how to set up and use RSpec in a Ruby on Rails application. We'll cover installing the `rspec-rails` gem, running the generator, and understanding the Rails-specific spec folder structure. This lesson assumes you know Rails but are new to automated testing and RSpec.
 
 ---
 
